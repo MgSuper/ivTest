@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="navColor">
+    <ion-title>
+      Product Brand
+    </ion-title>
+  </ion-navbar>
+  <ion-searchbar (ionInput)="filterTechnologies($event)">
+  </ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-grid text-center>
+  <ion-row style="background: gray;">
+    <ion-col style="border-style: groove;" col-2>Action</ion-col>
+    <ion-col style="border-style: groove;" col-3>Brand</ion-col>
+    <ion-col style="border-style: groove;" col-4>Description</ion-col>
+    <ion-col style="border-style: groove;" col-3>Code</ion-col>
+  </ion-row>
+  <ion-row *ngFor="let brand of allBrands">
+    <ion-col style="border-style: groove;" col-2>
+      <ion-row style="border-style: inset;background: green;" (click)="updatebrand(brand)">
+        <ion-icon name="ios-create-outline" style="color: blue;padding-left: 33%;"></ion-icon>
+      </ion-row>
+      <ion-row style="border-style: inset;background: red;" (click)="deletebrand(brand._id)">
+        <ion-icon name="close" style="color: white;padding-left: 33%;"></ion-icon>
+      </ion-row>
+    </ion-col>
+    <ion-col col-3 style="border-style: groove;">{{brand.brand}}</ion-col>
+    <ion-col col-4 style="border-style: groove;">{{brand.description}}</ion-col>
+    <ion-col col-3 style="border-style: groove;">{{brand.code}}</ion-col>
+  </ion-row>
+
+  </ion-grid>
+
+</ion-content>
+<ion-footer>
+  <ion-row>
+    <ion-col (click)="insert(newBrands)" style="font-size: 2rem;" col-1><ion-icon name="add-circle" style="padding-top: 45%;"></ion-icon></ion-col>
+    <ion-col col-4><ion-input class="input-border" type="text" placeholder="Type Brand" [(ngModel)]="newBrands.brand" name="brand"></ion-input></ion-col>
+    <ion-col col-4><ion-input class="input-border" type="text" placeholder="Type Description" [(ngModel)]="newBrands.description" name="description"></ion-input></ion-col>
+    <ion-col col-3><ion-input class="input-border" type="text" placeholder="Type Code" [(ngModel)]="newBrands.code" name="id"></ion-input></ion-col>
+  </ion-row>
+</ion-footer>

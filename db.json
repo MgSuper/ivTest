@@ -1,0 +1,38 @@
+{
+  "BrandRc": [
+    {
+      "brand": true,
+      "description": "Dell 2015",
+      "id": "d001"
+    },
+    {
+      "brand": false,
+      "description": "Dell 2016",
+      "id": "d002"
+    },
+    {
+      "brand": true,
+      "description": "Dell 2017",
+      "id": "d003"
+    },
+    {
+      "brand": true,
+      "description": "Dell 2018",
+      "id": "d004"
+    },
+    {
+      "brand": false,
+      "description": "Dell 2019",
+      "id": "d005"
+    },
+    {
+      "id": "I_Wd57s"
+    },
+    {
+      "id": "Ceium7~"
+    },
+    {
+      "id": "kd5sJ0k"
+    }
+  ]
+}
